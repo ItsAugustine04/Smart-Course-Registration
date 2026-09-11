@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.smartcourse.controller.LoginController"
+           styleClass="login-root"
+           minWidth="900" minHeight="600">
+
+    <VBox alignment="CENTER" spacing="40" VBox.vgrow="ALWAYS">
+        <!-- Header -->
+        <VBox alignment="CENTER" spacing="8">
+            <Label text="🎓" styleClass="logo-icon"/>
+            <Label text="Smart Course Registration" styleClass="login-title"/>
+            <Label text="University Academic Portal" styleClass="login-subtitle"/>
+        </VBox>
+
+        <!-- Login Card -->
+        <VBox styleClass="login-card" alignment="CENTER" spacing="20" maxWidth="400" minWidth="400">
+            <Label text="Sign In to Your Account" style="-fx-font-size:17px; -fx-font-weight:600; -fx-text-fill:#cbd5e1;"/>
+
+            <!-- Error Label -->
+            <Label fx:id="errorLabel" text="" styleClass="error-label" visible="false" wrapText="true" maxWidth="320" minHeight="0" prefHeight="-1"/>
+
+            <!-- Email -->
+            <VBox spacing="4">
+                <Label text="EMAIL ADDRESS" styleClass="label-form"/>
+                <TextField fx:id="emailField" promptText="you@university.edu" minWidth="320"/>
+            </VBox>
+
+            <!-- Password -->
+            <VBox spacing="4">
+                <Label text="PASSWORD" styleClass="label-form"/>
+                <PasswordField fx:id="passwordField" promptText="••••••••" minWidth="320"/>
+            </VBox>
+
+            <!-- Login Button -->
+            <Button fx:id="loginBtn" text="Sign In →" styleClass="btn-primary"
+                    onAction="#handleLogin" maxWidth="320" minWidth="320"/>
+
+            <HBox spacing="5" alignment="CENTER">
+                <Label text="Don't have an account?" style="-fx-text-fill:#94a3b8; -fx-font-size:13px;"/>
+                <Hyperlink text="Create Account" onAction="#handleNavigateToSignup" 
+                           style="-fx-text-fill:#6366f1; -fx-font-weight:600; -fx-underline:false; -fx-padding:0;"/>
+            </HBox>
+
+            <Separator/>
+
+            <!-- Demo credentials hint -->
+            <VBox spacing="4" alignment="CENTER">
+                <Label text="Demo Credentials" style="-fx-font-size:11px; -fx-text-fill:#475569; -fx-font-weight:600;"/>
+                <HBox spacing="16" alignment="CENTER">
+                    <Label text="Student: student@uni.edu" style="-fx-font-size:11px; -fx-text-fill:#475569;"/>
+                    <Label text="Faculty: faculty@uni.edu" style="-fx-font-size:11px; -fx-text-fill:#475569;"/>
+                    <Label text="Admin: admin@uni.edu" style="-fx-font-size:11px; -fx-text-fill:#475569;"/>
+                </HBox>
+                <Label text="Password: password123" style="-fx-font-size:11px; -fx-text-fill:#475569;"/>
+            </VBox>
+        </VBox>
+    </VBox>
+</StackPane>
